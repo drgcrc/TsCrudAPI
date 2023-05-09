@@ -8,13 +8,13 @@ import { Todo } from './todos.model';
 const router = Router();
 
 router.get('/', TodoHandlers.findAll);
-// router.get(
-//   '/:id',
-//   validateRequest({
-//     params: ParamsWithId,
-//   }),
-//   TodoHandlers.findOne,
-// );
+router.get(
+  '/:id',
+  validateRequest({
+    params: ParamsWithId,
+  }),
+  TodoHandlers.findOne,
+);
 router.post(
   '/',
   validateRequest({
@@ -30,12 +30,12 @@ router.put(
   }),
   TodoHandlers.updateOne,
 );
-// router.delete(
-//   '/:id',
-//   validateRequest({
-//     params: ParamsWithId,
-//   }),
-//   TodoHandlers.deleteOne,
-// );
+router.delete(
+  '/:id',
+  validateRequest({
+    params: ParamsWithId,
+  }),
+  TodoHandlers.deleteOne,
+);
 
 export default router;
